@@ -25,12 +25,11 @@ namespace population
         {
             services.AddCors(
                 options => { options.AddPolicy("AllowSpecificOrigin", builder =>
-                    {
-                        builder
-                            .WithOrigins("http://localhost:5000/api/v1/population")
-                            .WithHeaders("application/json")
-                            .WithMethods("GET");
-                    });});
+                {
+                    builder
+                        .WithOrigins("http://localhost:5000/api/v1/population");
+                });
+                });
             services.AddMvc();
         }
 
